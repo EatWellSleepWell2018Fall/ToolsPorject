@@ -1,11 +1,15 @@
 
-# coding: utf-8
-
-# In[77]:
-
-
 class Node:
     def __init__(self, s0):
+        """
+        self.val: stock price
+        self.val1: call option price
+        self.val2: put option price
+        self.left: one of the stock price's children increase to u*self.val with prob p
+        self.right: the other of the stock price's children decrease to d*self.val with prob (1-p)
+        """
+        
+        
         self.val = s0
         self.val1 = s0
         self.val2 = s0
@@ -44,6 +48,7 @@ def CRR_model(stock_price, strike_price, var, r_f, ttm, n_times):
             count += 2
             if count >= n:
                 break
+                
     ans = []
     probs = []
     def dfs(root):
@@ -68,10 +73,11 @@ def CRR_model(stock_price, strike_price, var, r_f, ttm, n_times):
             root.val2 = dfs1(root.left)[1]*root.left.p + dfs1(root.right)[1]*root.right.p
         return [root.val1, root.val2]
 
-    root = Node(stock_price) #初始化s0的值，这里我设的5
+    root = Node(stock_price) 
     bfs(root,n_times)
     dfs(root)
     dfs1(root)
+    
     #print (ans, ps)
     return (root.val1, root.val2)
 
@@ -82,10 +88,3 @@ r_f = 0.03
 n_times = 10
 ttm = 1
 CRR_model(stock_price, strike_price, var, r_f, ttm, m)
-
-
-# In[78]:
-
-
-
-
