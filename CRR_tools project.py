@@ -27,11 +27,11 @@ def CRR_model(stock_price, strike_price, var, r_f, ttm, n_times):
         queue.append(root)
         var_act = (var/365) * (ttm/n_times)
         u = np.exp(var_act*((ttm/n_times)**0.5))
-        print("u: ",u)
+        # print("u: ",u)
         d = 1/u 
-        print("d: ",d)
+        # print("d: ",d)
         p = (np.exp(r_f*(ttm/n_times) - d))/(u - d)
-        print("p: ", p)
+        # print("p: ", p)
         
         n = pow(2,n_times) - 1 
         count = 1
@@ -59,7 +59,7 @@ def CRR_model(stock_price, strike_price, var, r_f, ttm, n_times):
             
             root.val1 = max(root.val1-strike_price, 0)
             root.val2 = max(strike_price-root.val2, 0)
-            print (root.val1, root.val2)
+            # print (root.val1, root.val2)
         else:
             dfs(root.left)
             dfs(root.right)
@@ -79,6 +79,7 @@ def CRR_model(stock_price, strike_price, var, r_f, ttm, n_times):
     dfs1(root)
     
     #print (ans, ps)
+    print (root.val1, root.val2)
     return (root.val1, root.val2)
 
 stock_price = 100
@@ -87,4 +88,4 @@ var = 0.1
 r_f = 0.03
 n_times = 10
 ttm = 1
-CRR_model(stock_price, strike_price, var, r_f, ttm, m)
+CRR_model(stock_price, strike_price, var, r_f, ttm, n_times)

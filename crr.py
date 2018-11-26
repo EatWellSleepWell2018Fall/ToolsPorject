@@ -15,8 +15,8 @@ def BinomialTreeCRR(T, S, K, r, sigma, n):
 	d = 1/u
 
 	# p: Risk-neutral 
-	p = exp(-r*T/n) * (exp(r*T/n) - d) / (u - d)
-	p1 = exp(-r*T/n) * (1-p)
+	p = (u- exp(-r*T/n)) / (u**2 - 1)
+	p1 = exp(-r*T/n) - p
 
 	# initial values at time T
 	ValueFlow = [max(K - S * (u ** (2*i-n)), 0) for i in range(n)]
@@ -42,4 +42,5 @@ def BinomialTreeCRR(T, S, K, r, sigma, n):
 	# print (ValueFlow)
 	print ('put: %f' % ValueFlow[0])
 
-BinomialTreeCRR(1,100,95,0.03,0.25,300)
+
+BinomialTreeCRR(1,100,100,0.03,0.1,10)
