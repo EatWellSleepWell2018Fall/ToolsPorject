@@ -44,6 +44,7 @@ def BinomialTreeCRR(T, S, K, r, sigma, n, option_type='C'):
 	# print ('put: %f' % ValueFlow[0])
 
 	## In matrix
+	# Resource: http://www.quantandfinancial.com/search/label/Binomial%20Tree
 	stockValue = np.zeros((n+1,n+1))
 	stockValue[0,0] = S
 	for i in range(1,n+1):
@@ -69,4 +70,36 @@ def BinomialTreeCRR(T, S, K, r, sigma, n, option_type='C'):
 	# print (optionValue[0,0])
 	return optionValue[0,0]
 
-BinomialTreeCRR(1,100,100,0.03,0.1,10,'C')
+T = 1 
+S = 100
+K = 100
+r = 0.03
+sigma = 0.1
+n = 10
+
+y = [-BinomialTreeCRR(T,S,K,r,sigma,n,'C')] * K
+y += [x - BinomialTreeCRR(T,S,K,r,sigma,n,'C') for x in range(K)] 
+
+plt.plot(range(2*K), y)
+plt.axis([0, 2*K, min(y) - 10, max(y) + 10])
+plt.xlabel('Asset price')
+plt.ylabel('Profits')
+plt.axvline(x=K, linestyle='--', color='black')
+plt.axhline(y=0, linestyle=':', color='black')
+plt.title('Call Option')
+plt.text(100, 0, 'K')
+plt.show()
+
+z = [-x + K - BinomialTreeCRR(T,S,K,r,sigma,n,'P') for x in range(K)] 
+z += [-BinomialTreeCRR(T,S,K,r,sigma,n,'P')] * (K)
+
+plt.plot(range(2*K), z, color='red')
+plt.axis([0, 2*K, min(y) - 10, max(y) + 10])
+plt.xlabel('Asset price')
+plt.ylabel('Profits')
+plt.axvline(x=K, linestyle='--', color='black')
+plt.axhline(y=0, linestyle=':', color='black')
+plt.title('Put Option')
+plt.text(100, 0, 'K')
+plt.show()
+# BinomialTreeCRR(1,100,100,0.03,0.1,10,'C')
