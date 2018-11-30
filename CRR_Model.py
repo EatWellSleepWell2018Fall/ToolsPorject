@@ -1,10 +1,12 @@
 
 '''Considering that using linklist costs too much time to run when n = 1000000 or more, which is too slow for us to sample.
     Decide to rewrite this model:'''
+
+
 import numpy as np
 import math
 
-def CRR_Model(n_times, Stock_price, Strike_price, r_f, var, ttm, P_C = 'C'):  
+def CRR_Model(n_times, Stock_price, Strike_price, r_f, var, ttm, P_C = 'Call'):  
     '''
     n_times: number of binomial steps
     Stock_price: initial underlying asset price
@@ -12,10 +14,10 @@ def CRR_Model(n_times, Stock_price, Strike_price, r_f, var, ttm, P_C = 'C'):
     r_f: risk free rate
     var: the volatility factor/variance of the market asset
     ttm: maturity
-    P_C: input should be 'C' or 'P', represent the put option or the call option
+    P_C: input should be 'Call' or 'Put', represent the put option or the call option
     '''
     
-    u = np.exp(var*np.sqrt(ttm/n_times))
+    u = np.exp(var * np.sqrt(ttm/n_times))
     d = 1/u
     p = (np.exp(r_f*(ttm/n_times)) - d) / (u - d) 
     n = n_times
@@ -43,12 +45,24 @@ def CRR_Model(n_times, Stock_price, Strike_price, r_f, var, ttm, P_C = 'C'):
     #backward calculation for option price    
     for i in range(n - 1,-1,-1):
         for j in range(i + 1):
-                if PutCall=="P":
+                if PutCall=="Put":
                     optionprice[i,j] = max(0, Strike_price-stockprice[i,j], np.exp(-r*(ttm/n_times))*(p*optionprice[i + 1,j] + (1 - p)*optionprice[i + 1,j + 1]))
-                elif PutCall=="C":
+                elif PutCall=="Call":
                     optionprice[i,j] = max(0, stockprice[i,j]-Strike_price, np.exp(-r*(ttm/n_times))*(p*optionprice[i + 1,j] + (1 - p)*optionprice[i + 1,j + 1]))
     
     return optionprice[0,0]
+
+#Example
+stock_price = 100
+strike_price = 100
+var = 0.1
+r_f = 0.03
+n_times = 13
+ttm = 1
+
+
+P_C = 'Call'
+CRR_Model(n, S, K, r, v, t, P_C)
 
 
 # class Node:
