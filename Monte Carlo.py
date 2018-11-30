@@ -48,6 +48,9 @@ def simulations_converge(option_type,S,K,T,r,v,simulations):
         simulation_path.append(price_T_simulation)
         
     plt.plot(simulation_path)
+    
+    plt.xlabel('simulation times')
+    plt.ylabel('option price')
     plt.show()
         
 
@@ -55,13 +58,14 @@ def simulations_converge(option_type,S,K,T,r,v,simulations):
 # In[12]:
 
 
-def stock_time(S,K,r,v,simulations,steps,time_delta):
+def stock_time(S,K,r,v,simulations,steps,T):
     
     from random import gauss
     import math
     from math import exp, sqrt
     import matplotlib.pyplot as plt
     
+    time_delta = T/252
     
     for j in range(simulations):
         price_path = [S]
@@ -85,10 +89,9 @@ S = 857.29 # underlying price
 v = 0.2076 # vol of 20.76%
 r = 0.0014 # rate of 0.14%
 K = 860
-steps = 2000
 simulations = 8
-time_delta = 1/365
-stock_time(S,K,r,v,simulations,steps,time_delta)
+T = 1/12
+stock_time(S,K,r,v,T,simulations)
 
 
 # In[18]:
