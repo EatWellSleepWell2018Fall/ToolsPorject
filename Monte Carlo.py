@@ -74,6 +74,8 @@ def stock_time(S,K,r,v,simulations,steps,time_delta):
         
     plt.ylabel('stock price',fontsize=15)
     plt.xlabel('steps',fontsize=15)
+    
+    plt.show()
 
 
 # In[15]:
