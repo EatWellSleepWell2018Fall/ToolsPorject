@@ -74,6 +74,29 @@ _CRR_: In this part, we write a function to calculate the stock price and decide
 ![CRR](https://github.com/EatWellSleepWell2018Fall/ToolsPorject/blob/master/images/crr-call.png)
 
 **Locally**   
-_BS_:    
+_BS_:
+
+    python3 OptionPricing.py
+    BS stock_name strike_price ttm [optional]option_type
+    
+    Example:
+    python3 OptionPricing.py
+    BS AAPL 170 1
+
 _Monte Carlo Simulation_:    
+
+    python3 OptionPricing.py
+    MC stock_name strike_price ttm [optional]option_type
+    
+    Example:
+    python3 OptionPricing.py
+    MC AAPL 170 1
+    
 _CRR_:   
+    
+    python3 OptionPricing.py
+    BS stock_name strike_price ttm [optional]option_type
+    
+    Example:
+    python3 OptionPricing.py
+    CRR AAPL 170 1
