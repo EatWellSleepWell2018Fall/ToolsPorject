@@ -1,4 +1,4 @@
-# IEOR 4501 Tools For Analytics -- Porject  
+# IEOR 4501 Tools For Analytics -- Project  
 
 ## Project Description
 [TO DO]  
@@ -28,10 +28,39 @@ This project is to write a library for option value prediction propose:
     Xiaosu Qi   
 
 ## Installation Instructions 
+To run in jupyter notebook:   
+
+    open jupyter notebook
+      
+To run locally:   
+
     git clone https://github.com/EatWellSleepWell2018Fall/ToolsPorject.git
     cd ToolsProject
     pip install -r requirements.txt
 
 ## Run Instructions
-[TO DO] 
-    CRR: [In this part, we write a function to calculate the stock price and decide the option price both in the future. Then considering the distribution the option price follows and the probability of the fluation] 
+[TO DO]    
+Parameters:   
+
+    stock_name: 
+    strike_price:
+    ttm: time to maturity
+    option_type: default value is 'Call' for call option, can also be set to 'Put' for put option
+    visualization: default value is 'Ture', which means a graph will also show
+
+**Jupyter notebook**    
+_BS_:    
+_Monte Carlo Simulation_:    
+_CRR_: In this part, we write a function to calculate the stock price and decide the option price both in the future. Then considering the distribution the option price follows and the probability of the fluation
+    
+    O = OptionPricing(stock_name, strike_price, ttm)
+    O.BinomialTreeCRR()
+    
+    For example:
+    O = OptionPricing('AAPL', 170, 1)
+    O.BinomialTreeCRR()
+    
+**Locally**   
+_BS_:    
+_Monte Carlo Simulation_:    
+_CRR_:   
