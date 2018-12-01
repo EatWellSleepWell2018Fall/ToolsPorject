@@ -51,12 +51,17 @@ Parameters:
 
 **Jupyter notebook**    
 _BS_:    
+![BS](https://github.com/EatWellSleepWell2018Fall/ToolsPorject/blob/master/images/BS.png)  
 _Monte Carlo Simulation_: In this part, I predict option prices based on Monte Carlo model. Provide a function stock_time() drawing graph of stock price movement during time. Another function simulations_converge() drawing graph to show how the prediction converges to a fixed value when simulations times increase.
 For example
     
     O = OptionPricing(stock_name, strike_price, ttm)
     O.Monte_Carlo_option()
-
+    
+    O = OptionPricing('AAPL', 170, 1)
+    O.Monte_Carlo_option()
+![Monte Carlo1](https://github.com/EatWellSleepWell2018Fall/ToolsPorject/blob/master/images/simulation1.png)
+![Monte Carlo2](https://github.com/EatWellSleepWell2018Fall/ToolsPorject/blob/master/images/simulation2.png)
 
 _CRR_: In this part, we write a function to calculate the stock price and decide the option price both in the future. Then considering the distribution the option price follows and the probability of the fluation
     
@@ -66,7 +71,8 @@ _CRR_: In this part, we write a function to calculate the stock price and decide
     For example:
     O = OptionPricing('AAPL', 170, 1)
     O.BinomialTreeCRR()
-    
+![CRR](https://github.com/EatWellSleepWell2018Fall/ToolsPorject/blob/master/images/crr-call.png)
+
 **Locally**   
 _BS_:    
 _Monte Carlo Simulation_:    
