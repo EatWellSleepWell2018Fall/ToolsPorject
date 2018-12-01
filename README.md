@@ -47,10 +47,23 @@ Parameters:
     ttm: time to maturity
     option_type: default value is 'Call' for call option, can also be set to 'Put' for put option
     visualization: default value is 'Ture', which means a graph will also show
+    MC_simulations: Times of Monte Carlo Simulations
 
 **Jupyter notebook**    
 _BS_:    
-_Monte Carlo Simulation_:    
+_Monte Carlo Simulation_: In this part, I predict option prices based on Monte Carlo model. Provide a function stock_time() drawing graph of stock price movement during time. Another function simulations_converge() drawing graph to show how the prediction converges to a fixed value when simulations times increase.
+For example
+    
+    stock_time(S,K,r,v,T)
+    stock_time(857.29,860,0.0014,0.2076,1/20)
+   
+    mc_euro_options(option_type,S,K,T,r,v,simulations)
+    mc_euro_options('Call',857.29,860,1/20,0.0014,0.2076,10000)
+    
+    simulations_converge(option_type,S,K,T,r,v,simulations)
+    simulations_converge('Call',857.26,860,1/20,0.00140.2076,10000)
+
+
 _CRR_: In this part, we write a function to calculate the stock price and decide the option price both in the future. Then considering the distribution the option price follows and the probability of the fluation
     
     O = OptionPricing(stock_name, strike_price, ttm)
