@@ -61,14 +61,14 @@ For example
     O = OptionPricing('AAPL', 170, 1)
     O.BS_model()
     
-   Result:
-   	        Call	Put
-Price	24.888208	11.267450
-Delta	0.670278	-0.329722
-Gamma	0.008038	0.008038
-Vega	64.650657	64.650657
-Theta	-11.006388	-6.041115
-Rho	    94.810044	-70.149200
+    Result:
+   	           Call	    Put
+      Price	24.888208	11.267450
+      Delta	0.670278	-0.329722
+      Gamma	0.008038	0.008038
+      Vega	64.650657	64.650657
+      Theta	-11.006388	-6.041115
+      Rho	94.810044	-70.149200
 
 
 ![BS](https://github.com/EatWellSleepWell2018Fall/ToolsPorject/blob/master/images/BS.png)
@@ -81,8 +81,8 @@ For example
     O = OptionPricing('AAPL', 170, 1)
     O.Monte_Carlo_option()
     
-Result:
-23.89030359110339
+    Result:
+    23.89030359110339
 
 ![Monte Carlo1](https://github.com/EatWellSleepWell2018Fall/ToolsPorject/blob/master/images/simulation1.png)
 ![Monte Carlo2](https://github.com/EatWellSleepWell2018Fall/ToolsPorject/blob/master/images/simulation2.png)
@@ -95,8 +95,8 @@ _CRR_: In this part, we write a function to calculate the stock price and decide
     For example:
     O = OptionPricing('AAPL', 170, 1)
     O.BinomialTreeCRR()
-Result:
-25.24934795132345
+    Result:
+    25.24934795132345
 
 ![CRR](https://github.com/EatWellSleepWell2018Fall/ToolsPorject/blob/master/images/crr-call.png)
 
