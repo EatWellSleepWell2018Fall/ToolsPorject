@@ -16,7 +16,7 @@ This project is to write a library for option value prediction propose:
     
     - Visualizations of all the methods are also presented to make users better understand the process and for further analysis. 
   
-  The aim is to use financial data and models to predict European option value and compare the result across different methods.
+  The aim is to use real-time stock price data and financial models to predict European option value, and compare the results across different methods.
 
 
 ## Group Name: EatWellSleepWell (Section 2)
@@ -50,7 +50,7 @@ Parameters:
 **Jupyter notebook**
    **Remarks: Current stock price, stock volatility, and risk-free interest rate are automatically calculated by get latest stock price data from yahoo-finance, 10-year average stock volatility, and latest 10-year treasaury bond interest rate scrapped from US-Tresuary website as risk-free interest rate.**
     
-_BS_: This part will get the option price for both Call and Put option from the parameters given. This also give sensitivity factor of stock price to each factor e.g. Delta is volatility of option price to stock price and return all results in dataframe for both Call and Put option. Graph for changes of option price due to each factor are also presented from this method.  
+_BS_: This part will get the option price for both Call and Put option from the parameters given. This also give sensitivity factors of stock price to each factor e.g. Delta is volatility of option price to stock price and return all results in dataframe for both Call and Put option. Graphs for changes of option price due to each factor are also presented from this method.  
 For example
     O = OptionPricing(stock_name, strike_price, ttm)
     O.BS_model()
@@ -84,7 +84,7 @@ For example
 ![Monte Carlo1](https://github.com/EatWellSleepWell2018Fall/ToolsPorject/blob/master/images/simulation1.png)
 ![Monte Carlo2](https://github.com/EatWellSleepWell2018Fall/ToolsPorject/blob/master/images/simulation2.png) 
 
-_CRR_: In this part, we write a function to calculate the stock price and decide the option price both in the future. Then considering the distribution the option price follows and the probability of the fluctuation. We also provide options to draw option value figures or not.
+_CRR Model_: In this part, we write a function to calculate the stock price and decide the option price both in the future. Then considering the distribution the option price follows and the probability of the fluctuation. We also provide options to draw option value figures or not.
     
     O = OptionPricing(stock_name, strike_price, ttm)
     O.BinomialTreeCRR()
@@ -98,7 +98,7 @@ _CRR_: In this part, we write a function to calculate the stock price and decide
 ![CRR](https://github.com/EatWellSleepWell2018Fall/ToolsPorject/blob/master/images/crr-call.png)
 
 **Locally**   
-_BS_:
+_BS Model_:
 
     python3 OptionPricing.py
     BS stock_name strike_price ttm [optional]option_type
@@ -116,7 +116,7 @@ _Monte Carlo Simulation_:
     python3 OptionPricing.py
     MC AAPL 170 1
     
-_CRR_:   
+_CRR Model_:   
     
     python3 OptionPricing.py
     BS stock_name strike_price ttm [optional]option_type
