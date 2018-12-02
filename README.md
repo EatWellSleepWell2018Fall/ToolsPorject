@@ -4,13 +4,13 @@
 This project is to write a library for option value prediction propose:
 - Create functions for option pricing by using 
     - Monte Carlo simulation   
-      The method is to generate 'n' times simulation of the underlying assets' path (in this case are stocks) in daily basis with each simulation has same input variables but one independent random varibale. Then put the value of each simalation into the option payoff formula. After repeately doing the simulations and get the payoff values for, preferable, thousands of times, we take the mean of all the simulated payoff values and get the option price.
+      The method is to generate 'n' times simulation of the underlying assets' path (in this case are stocks value) in daily basis with each simulation has same input variables but one independent random varibale. Then put the value of each simalation into the option payoff formula. After repeately doing the simulations and get the payoff values for, preferable, thousands of times, we take the mean of all the simulated payoff values and get the option price.
     
     - Binomial option pricing model (Cox, Ross and Rubinstein, CRR Model)   
-    The model is to an options valuation method. It uses an iterative procedure, allowing for the specification of nodes, or points in time, during the time span between the valuation date and the option's expiration date. The model reduces possibilities of price changes, and removes the possibility for arbitrage. A simplified example of CRR model is in form of a binomial tree.
+    The model is an options valuation pricing method. It uses an iterative procedure, allowing for the specification of nodes, or points in time, during the time span between the valuation date and the option's expiration date. The model reduces possibilities of price changes, and removes the possibility for arbitrage. A simplified example of CRR model is in form of a binomial tree.
 
     - Black Scholes Formula with sensitivity analysis
-    Black Scholes Formula (BS Model) is a close-form formula to to calculate option prices given parameter which are current stock price,option strike price, stock's volatility, option time to maturity, risk-free interest rate, assuming that stock price movement follows lognormal distribution. This also model allow us to do a sensitivity for the option price by varying each parameters and see its effect to the option price.
+    Black Scholes Formula (BS Model) is a close-form formula to to calculate option prices given parameter which are current stock price, option strike price, stock's volatility, option time to maturity, risk-free interest rate, assuming that stock price movement follows lognormal distribution. This also model allow us to do a sensitivity for the option price by varying each parameters and see its effect to the option price.
     
     - Functions to gather stock data from public sources e.g. yahoo-finance or by doing real time web scarping on financial websites and use statistics package to sample necessary data for the simulations and formula mentioned.
     
@@ -84,7 +84,7 @@ For example
 ![Monte Carlo1](https://github.com/EatWellSleepWell2018Fall/ToolsPorject/blob/master/images/simulation1.png)
 ![Monte Carlo2](https://github.com/EatWellSleepWell2018Fall/ToolsPorject/blob/master/images/simulation2.png) 
 
-_CRR_: In this part, we write a function to calculate the stock price and decide the option price both in the future. Then considering the distribution the option price follows and the probability of the fluctuation
+_CRR_: In this part, we write a function to calculate the stock price and decide the option price both in the future. Then considering the distribution the option price follows and the probability of the fluctuation. We also provide options to draw option value figures or not.
     
     O = OptionPricing(stock_name, strike_price, ttm)
     O.BinomialTreeCRR()
