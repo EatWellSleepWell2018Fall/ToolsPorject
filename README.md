@@ -1,7 +1,6 @@
 # IEOR 4501 Tools For Analytics -- Project  
 
 ## Project Description
-[TO DO]  
 This project is to write a library for option value prediction propose:
 - Create functions for option pricing by using 
     - Monte Carlo simulation   
@@ -40,7 +39,6 @@ To run locally:
     pip install -r requirements.txt
 
 ## Run Instructions
-[TO DO]    
 Parameters:   
 
     stock_name: Name of underlying asset that user want to calculate it's option price. Stock name are all stocks available from yahoo-finance
@@ -70,8 +68,8 @@ For example
       Theta	-11.006388	-6.041115
       Rho	94.810044	-70.149200
 
+![BS](https://github.com/EatWellSleepWell2018Fall/ToolsPorject/blob/master/images/BS.png)   
 
-![BS](https://github.com/EatWellSleepWell2018Fall/ToolsPorject/blob/master/images/BS.png)
 _Monte Carlo Simulation_: In this part, I predict option prices based on Monte Carlo model. Provide a function stock_time() drawing graph of stock price movement during time. Another function simulations_converge() drawing graph to show how the prediction converges to a fixed value when simulations times increase.
 For example
     
@@ -85,7 +83,7 @@ For example
     23.89030359110339
 
 ![Monte Carlo1](https://github.com/EatWellSleepWell2018Fall/ToolsPorject/blob/master/images/simulation1.png)
-![Monte Carlo2](https://github.com/EatWellSleepWell2018Fall/ToolsPorject/blob/master/images/simulation2.png)
+![Monte Carlo2](https://github.com/EatWellSleepWell2018Fall/ToolsPorject/blob/master/images/simulation2.png) 
 
 _CRR_: In this part, we write a function to calculate the stock price and decide the option price both in the future. Then considering the distribution the option price follows and the probability of the fluctuation
     
