@@ -1,7 +1,7 @@
 # IEOR 4501 Tools For Analytics -- Project  
 
 ## Project Description
-This project is to write a package for option value prediction propose:
+This project is to write a library for option value prediction propose:
 - Create functions for option pricing by using 
     - Monte Carlo Simulation   
       The method is to generate 'n' times simulation of the underlying assets' path (in this case are stocks value) in daily basis with each simulation has same input variables but one independent random varibale. Then put the value of each simalation into the option payoff formula. After repeately doing the simulations and get the payoff values for, preferable, thousands of times, we take the mean of all the simulated payoff values and get the option price.
@@ -21,10 +21,10 @@ This project is to write a package for option value prediction propose:
 
 ## Group Name: EatWellSleepWell (Section 2)
 #### Group Members: 
-    Varoon Kitayaporn
-    Aries Li
-    Chenxuerui Li
-    Xiaosu Qi   
+    Varoon Kitayaporn: vk2414
+    Aries Li：jl5239
+    Chenxuerui Li: cl3784
+    Xiaosu Qi：xq2183
 
 ## Installation Instructions 
 To run in jupyter notebook:   
