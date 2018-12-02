@@ -3,13 +3,13 @@
 ## Project Description
 This project is to write a package for option value prediction propose:
 - Create functions for option pricing by using 
-    - Monte Carlo simulation   
+    - Monte Carlo Simulation   
       The method is to generate 'n' times simulation of the underlying assets' path (in this case are stocks value) in daily basis with each simulation has same input variables but one independent random varibale. Then put the value of each simalation into the option payoff formula. After repeately doing the simulations and get the payoff values for, preferable, thousands of times, we take the mean of all the simulated payoff values and get the option price.
     
-    - Binomial option pricing model (Cox, Ross and Rubinstein, CRR Model)   
+    - Binomial Option Pricing Model (Cox, Ross and Rubinstein, CRR Model)   
     The model is an options valuation pricing method. It uses an iterative procedure, allowing for the specification of nodes, or points in time, during the time span between the valuation date and the option's expiration date. The model reduces possibilities of price changes, and removes the possibility for arbitrage. A simplified example of CRR model is in form of a binomial tree.
 
-    - Black Scholes Formula with sensitivity analysis  
+    - Black Scholes Formula with Sensitivity Analysis  
         Black Scholes Formula (BS Model) is a close-form formula to to calculate option prices given parameters which are current stock price, option strike price, stock's volatility, option time to maturity and risk-free interest rate, assuming that stock price movement follows lognormal distribution. This also model allow us to analyze sensitivity for the option price by varying each parameters and see its effect to the option price respectively.
     
     - Functions that gathering stock data from public sources e.g. yahoo-finance or by doing real time web scarping on financial websites. Using statistics package to sample necessary data for the simulations and pricing models.
@@ -50,7 +50,7 @@ Parameters:
 **Jupyter notebook**
    **Remarks: Current stock price, stock volatility, and risk-free interest rate are automatically calculated by get latest stock price data from yahoo-finance, 10-year average stock volatility, and latest 10-year treasaury bond interest rate scrapped from US-Tresuary website as risk-free interest rate.**
     
-_BS_: This part will get the option price for both Call and Put option from the parameters given. This also give sensitivity factors of stock price to each factor e.g. Delta is volatility of option price to stock price and return all results in dataframe for both Call and Put option. Graphs for changes of option price due to each factor are also presented from this method.  
+_BS Model_: This part will get the option price for both Call and Put option from the parameters given. This also give sensitivity factors of stock price to each factor e.g. Delta is volatility of option price to stock price and return all results in dataframe for both Call and Put option. Graphs for changes of option price due to each factor are also presented from this method.  
 For example
     O = OptionPricing(stock_name, strike_price, ttm)
     O.BS_model()
@@ -67,7 +67,7 @@ For example
       Theta	-11.006388	-6.041115
       Rho	94.810044	-70.149200
 
-![BS](https://github.com/EatWellSleepWell2018Fall/ToolsPorject/blob/master/images/BS.png)   
+![BS Model](https://github.com/EatWellSleepWell2018Fall/ToolsPorject/blob/master/images/BS.png)   
 
 _Monte Carlo Simulation_: In this part, we predict option prices based on Monte Carlo model. The function $stock_time()$  draws graphs of stock price movement during a period. Using function $simulations_converge()$ to draw graph and show how the prediction converges to a fixed value when simulations times reach to a certain level.
 For example
@@ -95,7 +95,7 @@ _CRR Model_: In this part, we write a function to calculate the stock price and 
     Result:
     25.24934795132345
 
-![CRR](https://github.com/EatWellSleepWell2018Fall/ToolsPorject/blob/master/images/crr-call.png)
+![CRR Model](https://github.com/EatWellSleepWell2018Fall/ToolsPorject/blob/master/images/crr-call.png)
 
 **Locally**   
 _BS Model_:
