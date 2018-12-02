@@ -69,7 +69,7 @@ For example
 
 ![BS Model](https://github.com/EatWellSleepWell2018Fall/ToolsPorject/blob/master/images/BS.png)   
 
-_Monte Carlo Simulation_: In this part, we predict option prices based on Monte Carlo model. The function $stock_time()$  draws graphs of stock price movement during a period. Using function $simulations_converge()$ to draw graph and show how the prediction converges to a fixed value when simulations times reach to a certain level.
+_Monte Carlo Simulation_: In this part, we predict option prices based on Monte Carlo model. The function stock_time() draws graphs of stock price movement during a period. Using function simulations_converge() to draw graph and show how the prediction converges to a fixed value when simulations times reach to a certain level.
 For example
     
     O = OptionPricing(stock_name, strike_price, ttm)
@@ -84,7 +84,7 @@ For example
 ![Monte Carlo1](https://github.com/EatWellSleepWell2018Fall/ToolsPorject/blob/master/images/simulation1.png)
 ![Monte Carlo2](https://github.com/EatWellSleepWell2018Fall/ToolsPorject/blob/master/images/simulation2.png) 
 
-_CRR Model_: In this part, we write a function to calculate the stock price and decide the option price in the futur. Then  considering the distribution of the option price and the probability of the fluctuation to calculate the present value of the option. Graphs are also given to show how the path of option values changing by stock price.
+_CRR Model_: In this part, we write a function to calculate the stock price and decide the option price in the future. Then  considering the distribution of the option price and the probability of the fluctuation to calculate the present value of the option. Graphs are also given to show how the path of option values changing by stock price.
     
     O = OptionPricing(stock_name, strike_price, ttm)
     O.BinomialTreeCRR()
