@@ -9,7 +9,7 @@ This project is to write a library for option value prediction propose:
     - Binomial option pricing model (Cox, Ross and Rubinstein, CRR Model)   
     The model is an options valuation pricing method. It uses an iterative procedure, allowing for the specification of nodes, or points in time, during the time span between the valuation date and the option's expiration date. The model reduces possibilities of price changes, and removes the possibility for arbitrage. A simplified example of CRR model is in form of a binomial tree.
 
-    - Black Scholes Formula with sensitivity analysis 
+    - Black Scholes Formula with sensitivity analysis  
         Black Scholes Formula (BS Model) is a close-form formula to to calculate option prices given parameter which are current stock price, option strike price, stock's volatility, option time to maturity, risk-free interest rate, assuming that stock price movement follows lognormal distribution. This also model allow us to do a sensitivity for the option price by varying each parameters and see its effect to the option price.
     
     - Functions to gather stock data from public sources e.g. yahoo-finance or by doing real time web scarping on financial websites and use statistics package to sample necessary data for the simulations and formula mentioned.
