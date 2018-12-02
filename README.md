@@ -1,7 +1,7 @@
 # IEOR 4501 Tools For Analytics -- Project  
 
 ## Project Description
-This project is to write a library for option value prediction propose:
+This project is to write a package for option value prediction propose:
 - Create functions for option pricing by using 
     - Monte Carlo simulation   
       The method is to generate 'n' times simulation of the underlying assets' path (in this case are stocks value) in daily basis with each simulation has same input variables but one independent random varibale. Then put the value of each simalation into the option payoff formula. After repeately doing the simulations and get the payoff values for, preferable, thousands of times, we take the mean of all the simulated payoff values and get the option price.
@@ -10,11 +10,11 @@ This project is to write a library for option value prediction propose:
     The model is an options valuation pricing method. It uses an iterative procedure, allowing for the specification of nodes, or points in time, during the time span between the valuation date and the option's expiration date. The model reduces possibilities of price changes, and removes the possibility for arbitrage. A simplified example of CRR model is in form of a binomial tree.
 
     - Black Scholes Formula with sensitivity analysis  
-        Black Scholes Formula (BS Model) is a close-form formula to to calculate option prices given parameter which are current stock price, option strike price, stock's volatility, option time to maturity, risk-free interest rate, assuming that stock price movement follows lognormal distribution. This also model allow us to do a sensitivity for the option price by varying each parameters and see its effect to the option price.
+        Black Scholes Formula (BS Model) is a close-form formula to to calculate option prices given parameters which are current stock price, option strike price, stock's volatility, option time to maturity and risk-free interest rate, assuming that stock price movement follows lognormal distribution. This also model allow us to analyze sensitivity for the option price by varying each parameters and see its effect to the option price respectively.
     
-    - Functions to gather stock data from public sources e.g. yahoo-finance or by doing real time web scarping on financial websites and use statistics package to sample necessary data for the simulations and formula mentioned.
+    - Functions that gathering stock data from public sources e.g. yahoo-finance or by doing real time web scarping on financial websites. Using statistics package to sample necessary data for the simulations and pricing models.
     
-    - Visualizations of all the methods are also presented to make users better understand the process and for further analysis. 
+    - Visualizations of all the methods are also presented to provide better understanding of the process and for further analysis. 
   
   The aim is to use real-time stock price data and financial models to predict European option value, and compare the results across different methods.
 
@@ -69,7 +69,7 @@ For example
 
 ![BS](https://github.com/EatWellSleepWell2018Fall/ToolsPorject/blob/master/images/BS.png)   
 
-_Monte Carlo Simulation_: In this part, I predict option prices based on Monte Carlo model. Provide a function stock_time() drawing graph of stock price movement during time. Another function simulations_converge() drawing graph to show how the prediction converges to a fixed value when simulations times increase.
+_Monte Carlo Simulation_: In this part, we predict option prices based on Monte Carlo model. The function $stock_time()$  draws graphs of stock price movement during a period. Using function $simulations_converge()$ to draw graph and show how the prediction converges to a fixed value when simulations times reach to a certain level.
 For example
     
     O = OptionPricing(stock_name, strike_price, ttm)
@@ -84,7 +84,7 @@ For example
 ![Monte Carlo1](https://github.com/EatWellSleepWell2018Fall/ToolsPorject/blob/master/images/simulation1.png)
 ![Monte Carlo2](https://github.com/EatWellSleepWell2018Fall/ToolsPorject/blob/master/images/simulation2.png) 
 
-_CRR Model_: In this part, we write a function to calculate the stock price and decide the option price both in the future. Then considering the distribution the option price follows and the probability of the fluctuation. We also provide options to draw option value figures or not.
+_CRR Model_: In this part, we write a function to calculate the stock price and decide the option price in the futur. Then  considering the distribution of the option price and the probability of the fluctuation to calculate the present value of the option. Graphs are also given to show how the path of option values changing by stock price.
     
     O = OptionPricing(stock_name, strike_price, ttm)
     O.BinomialTreeCRR()
