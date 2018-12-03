@@ -47,7 +47,7 @@ Parameters:
     visualization: Default value is 'Ture', which means a graph will also show
     MC_simulations: Times of Monte Carlo Simulations
 
-**Jupyter notebook**
+**Jupyter notebook**   
    **Remarks: Current stock price, stock volatility, and risk-free interest rate are automatically calculated by get latest stock price data from yahoo-finance, 10-year average stock volatility, and latest 10-year treasaury bond interest rate scrapped from US-Tresuary website as risk-free interest rate.**
     
 _BS Model_: This part will get the option price for both Call and Put option from the parameters given. This also give sensitivity factors of stock price to each factor e.g. Delta is volatility of option price to stock price and return all results in dataframe for both Call and Put option. Graphs for changes of option price due to each factor are also presented from this method.  
